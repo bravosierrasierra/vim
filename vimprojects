@@ -1,0 +1,35 @@
+jazz=/home/stalker/repository/jass-trunk/server/impl/netcontrol CD=~/repository/jass-trunk/server/impl/netcontrol filter="*.py" {
+ __init__.py
+ main_report.py
+ nccommon.py
+ policy.py
+ s_dc_add_net.py
+ s_dc_addd.py
+ s_dc_rend.py
+ s_divisions_control.py
+ s_inet.py
+ s_inet_add_ip.py
+ s_inet_mod_timerestrictions_add.py
+ s_inet_modify.py
+ s_inet_resrictions.py
+ s_inet_stat.py
+ s_inet_stat_detailed.py
+ s_main.py
+ s_qos.py
+ s_qos_class_add.py
+ s_qos_class_mod.py
+ s_qos_class_mod_add.py
+ s_qos_group_add.py
+ s_qos_group_mod.py
+ s_qos_group_mod_add.py
+ s_qos_max_modify.py
+ test.py
+}
+public_html=/home/stalker/public_html CD=~/public_html filter="*" {
+ trafreport=trafreport CD=~/public_html/trafreport filter="*" {
+  htaccess
+  index.py
+  main_report.py
+  test_form.py
+ }
+}

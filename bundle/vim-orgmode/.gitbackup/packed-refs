@@ -1,0 +1,20 @@
+# pack-refs with: peeled fully-peeled sorted 
+2007f6c7923c82093ec94504a8e8d6758f0e1b8f refs/remotes/origin/checkbox_hl
+4c3c5c558ccce2517b4838b1c7be9cd37dfbbd26 refs/remotes/origin/enable_syntaxrange
+331c91df04dd6d261a4ac9a5b64d40cbd7293d15 refs/remotes/origin/gh-pages
+35e94218c12a0c063b4b3a9b48e7867578e1e13c refs/remotes/origin/master
+b48a522c4a4993663efff3ed778a9fc118e9088d refs/remotes/origin/speed_improvements
+a697a645b58fd49795354e006618fd4372d1e5d3 refs/remotes/origin/travis_integration
+3d8282a1602df8508ef5bbbbb7ea8215b1c77728 refs/remotes/origin/v0.4.1
+a6b5c599cc7251008913ba7bd0a7a9ce0e199cf3 refs/tags/pre-liborgmode
+f93396cf5988e36ac2213fd6b293c5e72b909d74 refs/tags/v0.2
+^cbb70eb0023963899aa7e5dcb2f5f203c2fa4268
+1440a5d68abe2de7c310c21ced75db75b5601025 refs/tags/v0.2.1
+46747dad27eddf2c651cf2b9f82c5c8672527e5a refs/tags/v0.3
+2df935db63da1b6bc9031228e1f4173e32f42c45 refs/tags/v0.3.1
+5926afc2471c8a55ef6dffb6bfc312e8a7a8fbab refs/tags/v0.4
+3d8282a1602df8508ef5bbbbb7ea8215b1c77728 refs/tags/v0.4.1
+e90d63b790364ff8b17b967d6dc103516268e173 refs/tags/v0.5.0
+^24422ec725d7f6be87e2941f89994e3de2053d13
+86f03531a6a78fbf6df5670cbfb8a081830121c7 refs/tags/v0.6.0
+^9143d469c06c0dda5fcc48410d0331edbdcf68a0
