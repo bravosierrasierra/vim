@@ -1,0 +1,28 @@
+- name: install repos for RHEL-based
+  yum: name={{ item }} state=present
+  # when: ansible_os_family == 'RedHat'
+  with_items:
+    - epel-release
+  become: yes
+- name: check russian locale
+  shell: locale -a | grep ru_RU
+  register: is_exists_ru
+  failed_when: false
+  # when: ansible_os_family == 'RedHat'
+- name: install russian locale if missing
+  shell: yum reinstall -y glibc-common
+  when:
+    - is_exists_ru.stdout == ''
+    # - ansible_os_family == 'RedHat'
+  become: yes
+- name: install packages for RHEL-based
+  yum: name={{ item }} state=present
+  # when: ansible_os_family == 'RedHat'
+  with_items:
+    - tmux
+    - git
+    - mc
+    - vim
+    - ctags
+    - nmon
+  become: yes

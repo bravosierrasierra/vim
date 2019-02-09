@@ -1,0 +1,25 @@
+---
+- name: configure installed soft
+  hosts: all
+  vars:
+    repo_url: https://github.com/bravosierrasierra/vim.git
+  tasks:
+    # OS-specifice tasks.
+    - include_tasks: "setup-{{ ansible_os_family }}.yml"
+
+    - name: clone git repo with vim settings
+      git: repo={{ repo_url }} dest="~/.vim" accept_hostkey=yes
+    - name: create symlink to .vimrc
+      file: src="~/.vim/vimrc" dest="~/.vimrc" state=link
+    - name: create symlink to .tmux.conf
+      file: src="~/.vim/_tmux.conf" dest="~/.tmux.conf" state=link
+    - name: include _bashrc in ~/.bashrc
+      blockinfile:
+        path: ~/.bashrc
+        block: |
+          # include template from repo
+          if [ -f ~/.vim/_bashrc ]; then
+            . ~/.vim/_bashrc
+          fi
+      
+      

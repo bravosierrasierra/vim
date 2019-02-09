@@ -1,0 +1,11 @@
+- name: install packages for Ubuntu-based
+  apt: name={{ item }} state=present
+  when: ansible_distribution == 'Ubuntu'
+  with_items:
+    - tmux
+    - git
+    - mc
+    - vim
+    - ctags
+    - nmon
+  become: yes
