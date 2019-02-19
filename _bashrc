@@ -3,12 +3,16 @@
 # export LANG=ru_RU.UTF-8
 # export LC_ALL=ru_RU.UTF-8
 
+# openstack stuff
+alias myos="source ~/git/openstack/budnikov.sergey-openrc.sh"
+
 ### Emacs stuff ###
 # use ~/bin/ec instead this
-# alias ec='emacsclient -c --no-wait'
+alias ec='emacsclient -c --no-wait'
 # export EDITOR=~/bin/ec
-# export PATH="$HOME/bin:$PATH"
-# alias ekill="killall -USR2 Emacs"
+export PATH="$HOME/bin:$PATH"
+alias ekill="killall -USR2 emacs26"
+alias xxkb_restart="~/bin/xxkb_restart.sh"
 
 # alias dfl="df -h -x tmpfs"
 alias mydf='df -lh|grep -ve "/run\|overlay\|shm\|tmpfs"'
