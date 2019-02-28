@@ -5,7 +5,9 @@
 
 # openstack stuff
 alias myos="source ~/git/openstack/budnikov.sergey-openrc.sh"
-
+source ~/git/openstack/budnikov.sergey-openrc.sh
+alias os=openstack
+alias ossh="os server ssh --identity=~/git/openstack/cloud.key --login root"
 ### Emacs stuff ###
 # use ~/bin/ec instead this
 alias ec='emacsclient -c --no-wait'
@@ -50,6 +52,9 @@ alias drc='/usr/local/bin/docker image prune -a --filter "until=24h" --force'
 alias dr='/usr/local/bin/docker'
 alias drr='/usr/local/bin/docker run --rm'
 alias drl='/usr/local/bin/docker logs --tail 100'
+
+# ansible stuff
+export ANSIBLE_VAULT_PASSWORD_FILE="~/.vault-pass"
 
 # alias pipupgradeall="sudo -H pip2 install -U $(pip2 freeze | awk '{split($0, a, "=="); print a[1]}')"
 
