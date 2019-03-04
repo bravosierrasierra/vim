@@ -4,9 +4,9 @@
 # export LC_ALL=ru_RU.UTF-8
 
 
-export PROMPT_DIRTRIM=3
-SHOW_DIRS=""
-# SHOW_DIRS="\w " # uncomment to enable displaying current directory
+export PROMPT_DIRTRIM=1
+# SHOW_DIRS=""
+SHOW_DIRS="\w " # uncomment to enable displaying current directory
 case $TERM in
 xterm-color)
 	if [[ ${EUID} == 0 ]] ; then
