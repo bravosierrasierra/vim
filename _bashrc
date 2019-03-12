@@ -4,6 +4,11 @@
 # export LC_ALL=ru_RU.UTF-8
 
 
+# ansible stuff
+export ANSIBLE_VAULT_PASSWORD_FILE="~/.vault-pass"
+# vagrant stuff
+export VAGRANT_DEFAULT_PROVIDER=libvirt
+
 export PROMPT_DIRTRIM=1
 # SHOW_DIRS=""
 SHOW_DIRS="\w " # uncomment to enable displaying current directory
@@ -30,6 +35,10 @@ alias myos="source ~/git/openstack/budnikov.sergey-openrc.sh"
 source ~/git/openstack/budnikov.sergey-openrc.sh
 alias os=openstack
 alias ossh="os server ssh --identity=~/git/openstack/cloud.key --login root"
+alias myssh="ssh -l sbudnikov -i ~/.ssh/id_rsa"
+alias myscp="scp -o "User=sbudnikov" -i ~/.ssh/id_rsa"
+
+
 ### Emacs stuff ###
 # use ~/bin/ec instead this
 alias ec='emacsclient -c --no-wait'
@@ -46,6 +55,7 @@ alias gosomehost="reset && ssh someuser@some.host"
 # alias getmail="rsync -avz -e ssh stalker@10.98.1.1:Maildir ~/ && mu index"
 # alias ideakey="/Users/stalker/bin/idea/IntelliJIDEALicenseServer\(0.0.0.0_41017\)/IntelliJIDEALicenseServer_darwin_amd64"
 # alias homeproxy="ssh -fCqN -L 8888:127.0.0.1:8888 workbravo"
+alias gobravo="reset && ssh stalker@bravosierra.ddns.net -p 668"
 
 ### Unix stuff
 mypsprogsize() {
@@ -74,9 +84,6 @@ alias drc='/usr/local/bin/docker image prune -a --filter "until=24h" --force'
 alias dr='/usr/local/bin/docker'
 alias drr='/usr/local/bin/docker run --rm'
 alias drl='/usr/local/bin/docker logs --tail 100'
-
-# ansible stuff
-export ANSIBLE_VAULT_PASSWORD_FILE="~/.vault-pass"
 
 # alias pipupgradeall="sudo -H pip2 install -U $(pip2 freeze | awk '{split($0, a, "=="); print a[1]}')"
 
