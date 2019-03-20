@@ -37,6 +37,8 @@ alias myos="source ~/git/openstack/budnikov.sergey-openrc.sh"
 source ~/git/openstack/budnikov.sergey-openrc.sh
 alias ss="sed 's/ \+/ /g'"
 alias os=openstack
+alias sshkey="eval `ssh-agent` && ssh-add ~/.ssh/id_rsa && ssh-add -l"
+
 alias ossh="os server ssh --identity=~/git/openstack/cloud.key --login root"
 alias myssh="ssh -l sbudnikov -i ~/.ssh/id_rsa -A"
 alias myscp="scp -o "User=sbudnikov" -i ~/.ssh/id_rsa -A"
