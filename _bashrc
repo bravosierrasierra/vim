@@ -2,7 +2,7 @@
 
 # export LANG=ru_RU.UTF-8
 # export LC_ALL=ru_RU.UTF-8
-
+[[ $TERM != "dumb" ]] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # ansible stuff
 export ANSIBLE_VAULT_PASSWORD_FILE="~/.vault-pass"
@@ -35,9 +35,12 @@ alias myos="source ~/git/openstack/budnikov.sergey-openrc.sh"
 source ~/git/openstack/budnikov.sergey-openrc.sh
 alias os=openstack
 alias ossh="os server ssh --identity=~/git/openstack/cloud.key --login root"
-alias myssh="ssh -l sbudnikov -i ~/.ssh/id_rsa"
-alias myscp="scp -o "User=sbudnikov" -i ~/.ssh/id_rsa"
-
+alias myssh="ssh -l sbudnikov -i ~/.ssh/id_rsa -A"
+alias myscp="scp -o "User=sbudnikov" -i ~/.ssh/id_rsa -A"
+alias mc="mc -S dark"
+alias goironic="ssh -l sergey.budnikov@sys.local 10.79.211.84"
+alias goo1="ssh root@10.63.200.23"
+alias goo2="ssh root@10.63.200.24"
 
 ### Emacs stuff ###
 # use ~/bin/ec instead this

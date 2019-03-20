@@ -359,13 +359,13 @@ set foldmethod=marker
 " select user colorscheme and gui font, if we use gvim"{{{
 if has("gui_running")
     " set guifont=Fixed\ Semi-Condensed\ 12
-    if has('win32') || has('win64')
+    if has('win32') || has('win64') " has("unix") or mac
         set guifont=Fixedsys:h9:cRUSSIAN
     else
         " set guifont=Terminus\ 10
         " set guifont=Terminus:h14
-        " set guifont=PragmataPro\ 10
-        set guifont=PragmataPro:h15
+        set guifont=PragmataPro\ 11
+        " set guifont=PragmataPro:h15
     endif
 
     " set guifont=Liberation\ Mono\ 10
