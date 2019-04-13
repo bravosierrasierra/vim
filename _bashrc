@@ -32,38 +32,17 @@ xterm-color)
 esac
 export PS1
 
-# openstack stuff
-alias myos="source ~/git/openstack/budnikov.sergey-openrc.sh"
-source ~/git/openstack/budnikov.sergey-openrc.sh
-alias ss="sed 's/ \+|$//g' | sed 's/-\++$/--/g'"
-alias os=openstack
-alias sshkey="eval `ssh-agent` && ssh-add ~/.ssh/id_rsa && ssh-add -l"
-
-alias ossh="os server ssh --identity=~/git/openstack/cloud.key --login root"
-alias myssh="ssh -l sbudnikov -i ~/.ssh/id_rsa -A"
-alias myscp="scp -o "User=sbudnikov" -i ~/.ssh/id_rsa -A"
 alias mc="mc -S dark"
-alias goironic="ssh -l sergey.budnikov@sys.local 10.79.211.84"
-alias goo1="ssh root@10.63.200.23"
-alias goo2="ssh root@10.63.200.24"
 
 ### Emacs stuff ###
 # use ~/bin/ec instead this
 alias ec='emacsclient -c --no-wait'
 # export EDITOR=~/bin/ec
 export PATH="$HOME/bin:$PATH"
-alias ekill="killall -USR2 emacs26"
-alias xxkb_restart="~/bin/xxkb_restart.sh"
 
 # alias dfl="df -h -x tmpfs"
 alias mydf='df -lh|grep -ve "/run\|overlay\|shm\|tmpfs"'
 alias reconfig="source ~/.bash_profile"
-
-alias gosomehost="reset && ssh someuser@some.host"
-# alias getmail="rsync -avz -e ssh stalker@10.98.1.1:Maildir ~/ && mu index"
-# alias ideakey="/Users/stalker/bin/idea/IntelliJIDEALicenseServer\(0.0.0.0_41017\)/IntelliJIDEALicenseServer_darwin_amd64"
-# alias homeproxy="ssh -fCqN -L 8888:127.0.0.1:8888 workbravo"
-alias gobravo="reset && ssh stalker@bravosierra.ddns.net -p 668"
 
 ### Unix stuff
 mypsprogsize() {
