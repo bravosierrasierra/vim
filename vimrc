@@ -44,6 +44,7 @@ Plugin 'gmarik/Vundle.vim'
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "}}}
 Plugin 'vim-scripts/utl.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'taglist.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'majutsushi/tagbar'
@@ -106,6 +107,11 @@ set diffopt+=iwhite
 " Provides tab-completion for all file-related tasks
 set path+=**
 " now we can ":find *efile" 
+" Display all matching files when we tab complete
+set wildmenu
+" NOW WE CAN:
+" - Hit tab to :find by partial match
+" - Use * to make it fuzzy
 
 " TAG JUMPING:
 " Create the `tags` file (may need to install ctags first)
