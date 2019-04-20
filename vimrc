@@ -43,7 +43,6 @@ Plugin 'gmarik/Vundle.vim'
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "}}}
-"Plugin 'jceb/vim-orgmode'
 Plugin 'vim-scripts/utl.vim'
 Plugin 'taglist.vim'
 Plugin 'tpope/vim-repeat'
@@ -54,14 +53,9 @@ Plugin 'vim-scripts/SyntaxRange'
 Plugin 'vim-scripts/occur.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'easymotion/vim-easymotion'
-
-" https://github.com/diepm/vim-rest-console
 Plugin 'diepm/vim-rest-console'
-
 Plugin 'ervandew/supertab'
-" Plugin 'itchyny/calendar.vim'
 Plugin 'mattn/calendar-vim'
-"""mattn/calendar-im   http://www.vim.org/scripts/script.php?script_id=52
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'LargeFile'
 Plugin 'lpenz/vimcommander'
@@ -72,35 +66,16 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-surround'
-" Plugin 'vim-scripts/EnhCommentify.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/genutils'
 Plugin 'vim-scripts/mru.vim'
 Plugin 'vim-scripts/pydoc.vim'
 Plugin 'vim-scripts/vcscommand.vim'
 Plugin 'vim-scripts/YankRing.vim'
-" Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'yegappan/grep'
-" Plugin 'yegappan/mru'
-" Plugin 'dhruvasagar/vim-table-mode'
-" Plugin 'vimwiki/vimwiki'
-"vikitasks"{{{
-"Plugin 'tomtom/vikitasks_vim'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'tomtom/trag_vim'
-"Plugin 'tomtom/hookcursormoved_vim'
-"}}}
-" Plugin 'klen/python-mode'
 Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'dhruvasagar/vim-dotoo'
-
-" Plugin 'vimoutliner/vimoutliner'
-
-"Plugin 'aaronbieber/vim-quicktask'
-" Plugin 'davidoc/taskpaper.vim'
-Plugin 'jceb/vim-orgmode'
-" Plugin 's3rvac/AutoFenc'
+" Plugin 'jceb/vim-orgmode'
 Plugin 'stephpy/vim-yaml'
 Plugin 'robbles/logstash.vim'
 " Plugin 'pearofducks/ansible-vim'
@@ -123,11 +98,51 @@ filetype plugin indent on    " required
 
 "}}}
 
+set nocompatible
 "set verbosefile=~/vimverbose.log
 "set verbose=15
 set diffopt+=iwhite
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+" now we can ":find *efile" 
+
+" TAG JUMPING:
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+" NOW WE CAN:
+" - Use ^] to jump to tag under cursor
+" - Use g^] for ambiguous tags
+" - Use ^t to jump back up the tag stack
+" AUTOCOMPLETE:
+
+" The good stuff is documented in |ins-completion|
+
+" HIGHLIGHTS:
+" - ^x^n for JUST this file
+" - ^x^f for filenames (works with our path trick!)
+" - ^x^] for tags only
+" - ^n for anything specified by the 'complete' option
+
+" NOW WE CAN:
+" - Use ^n and ^p to go back and forth in the suggestion list
 " base behavior settings "{{{
-set nocompatible
+
+" FILE BROWSING:
+
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+" NOW WE CAN:
+" - :edit a folder to open a file browser
+" - <CR>/v/t to open in an h-split/v-split/tab
+" - check |netrw-browse-maps| for more mappings
+
 set nocursorline
 set nosmartindent
 
@@ -364,8 +379,11 @@ if has("gui_running")
     else
         " set guifont=Terminus\ 10
         " set guifont=Terminus:h14
-        set guifont=PragmataPro\ 11
-        " set guifont=PragmataPro:h15
+        if has("mac")
+            set guifont=PragmataPro:h15
+        else
+            set guifont=PragmataPro\ 11
+        endif
     endif
 
     " set guifont=Liberation\ Mono\ 10
