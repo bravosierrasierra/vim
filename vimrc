@@ -1044,6 +1044,9 @@ endfunction
 vnoremap <c-a> :call Incr()<cr>
 "}}}
 
+" quick clean comments
+map <Leader>c :%g/^\s*#/d<CR>:%g/^$/d<CR>
+
 
 nmap <Tab> za
 map <Leader>h <C-w><C-w>
