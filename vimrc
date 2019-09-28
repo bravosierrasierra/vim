@@ -921,6 +921,7 @@ if has("autocmd")
 
   au BufNewFile,BufRead  svn-commit.* setf svn
   au BufNewFile,BufRead  svn-log.* setf svn
+  au BufNewFile,BufRead  *.conf setf conf
 
   " always cd to the current file's directory
   " autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | sil! lcd %:p:h | endif
