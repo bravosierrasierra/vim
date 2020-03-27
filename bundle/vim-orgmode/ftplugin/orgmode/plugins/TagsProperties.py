@@ -122,7 +122,7 @@ class TagsProperties(object):
 				for t2 in tags:
 					if t1 == t2:
 						continue
-					searchstring += u'\\(:[a-zA-Z:]*\\)\?:%s' % t2
+					searchstring += u'\\(:[a-zA-Z:]*\\)\\?:%s' % t2
 			searchstring += u'\\)'
 
 			vim.command(u'/\\zs:%s:\\ze' % searchstring)
@@ -187,8 +187,8 @@ class TagsProperties(object):
 		self.commands.append(cmd)
 
 		# workaround to align tags when user is leaving insert mode
-		vim.command(u_encode(u"""function Org_complete_tags(ArgLead, CmdLine, CursorPos)
-python << EOF
+		vim.command(u_encode(u"function Org_complete_tags(ArgLead, CmdLine, CursorPos)\n"
++ sys.executable.split('/')[-1] + u""" << EOF
 ORGMODE.plugins[u'TagsProperties'].complete_tags()
 EOF
 if exists('b:org_complete_tags')

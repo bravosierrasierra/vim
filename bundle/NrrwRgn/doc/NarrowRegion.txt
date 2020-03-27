@@ -67,7 +67,8 @@ This plugin defines the following commands:
                             split buffer but in the current window (works best
                             with 'hidden' set).
 
-                                                                *:WidenRegion*
+                                                         *:WidenRegion* *:WR*
+:WR[!]
 :WidenRegion[!]             This command is only available in the narrowed
                             scratch window. If the buffer has been modified,
                             the contents will be put back on the original
@@ -95,8 +96,16 @@ This plugin defines the following commands:
 :[range]NRP[!]              You can use this command, to mark several lines
                             that will later be put into a Narrowed Window
                             using |:NRM|.
-                            If the ! is used, all earlier selected lines will
-                            be cleared first.
+                            Using '!' clears the selection and does not add
+                            any lines.
+                            Use |:NRUnprepare| to remove a line again.
+
+                                                                  *:NRUnprepare*
+:[range]NRUnprepare[!]
+                            This command will remove the current line and
+                            remove it from the lines marked for use with |:NRM|.
+                            If the current line was not previously selected
+                            for a multi narrowed window, it is ignored.
 
                                                                   *:NRMulti*
 :NRMulti
@@ -524,6 +533,12 @@ looking at my Amazon whishlist: http://www.amazon.de/wishlist/2BKAHE8J7Z6UW
   https://github.com/chrisbra/NrrwRgn/issues/62
 - Make :NUD able to handle git like merge conflicts
   https://github.com/chrisbra/NrrwRgn/issues/68
+- Correctly jump to the original window when closing
+  https://github.com/chrisbra/NrrwRgn/issues/70
+- Allow to Unremove lines from |:NRP| command
+  https://github.com/chrisbra/NrrwRgn/issues/72
+- Clarify documentation about |:NRP| command
+  https://github.com/chrisbra/NrrwRgn/issues/71
 
 0.33: Jan 16, 2015 {{{1
 - set local options later, so that FileType autocommands don't trigger to
