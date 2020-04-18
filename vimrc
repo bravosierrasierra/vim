@@ -781,7 +781,7 @@ let g:miniBufExplForceSyntaxEnable = 1"}}}
 " }}}
 
 " NerdCommenter plugin: {{{
-" https://github.com/scrooloose/nerdcommenteDComToggleComment
+" https://github.com/preservim/nerdcommenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
@@ -800,6 +800,9 @@ let g:NERDCustomDelimiters = {
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+vmap <Leader>; <Plug>NERDCommenterToggle
+nmap <Leader>; <Plug>NERDCommenterToggle
 
 vmap <F4> <Plug>NERDCommenterToggle
 nmap <F4> <Plug>NERDCommenterToggle
@@ -1079,11 +1082,13 @@ vmap <F2> "*ygv
 imap <C-s> <C-O>:w!<CR>
 map <C-s> :w!<CR>
 
+map <Leader>w :w!<CR>
+
 " map F3 key to make selection in all modes
-imap <F3> <C-c><F3>
-map <silent> <F3> V
-nnoremap <silent> <F3> V
-vmap <F3> <C-c>
+imap <C-m> <C-c><F3>
+map <silent> <C-m> V
+nnoremap <silent> <C-m> V
+vmap <C-m> <C-c>
 
 " python helper
 " map  <F4> :call ShowPyDoc('<C-R><C-W>', 1)<CR>
