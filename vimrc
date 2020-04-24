@@ -1090,6 +1090,10 @@ map <silent> <C-j> V
 nnoremap <silent> <C-j> V
 vmap <C-j> <C-c>
 
+map <silent> <C-g> <Esc>
+vmap <C-g> <Esc>
+imap <C-g> <Esc>
+
 " python helper
 " map  <F4> :call ShowPyDoc('<C-R><C-W>', 1)<CR>
 " map  <F5> :call ShowPyDoc('<C-R><C-A>', 1)<CR>
