@@ -1085,10 +1085,10 @@ map <C-s> :w!<CR>
 map <Leader>w :w!<CR>
 
 " map F3 key to make selection in all modes
-imap <C-m> <C-c><F3>
-map <silent> <C-m> V
-nnoremap <silent> <C-m> V
-vmap <C-m> <C-c>
+imap <C-j> <C-c><F3>
+map <silent> <C-j> V
+nnoremap <silent> <C-j> V
+vmap <C-j> <C-c>
 
 " python helper
 " map  <F4> :call ShowPyDoc('<C-R><C-W>', 1)<CR>
