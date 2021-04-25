@@ -1,5 +1,12 @@
+command! Vb normal! <C-v>
+command! Visual      normal! v
+command! VisualLine  normal! V
+command! VisualBlock execute "normal! \<C-v>"
+
 " noremap <SPACE> <Nop>
 let mapleader = "\<Space>"
+
+command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
 " Vundle"{{{
 set nocompatible              " be iMproved, required
@@ -102,7 +109,7 @@ filetype plugin indent on    " required
 set nocompatible
 "set verbosefile=~/vimverbose.log
 "set verbose=15
-set diffopt+=iwhite
+" set diffopt+=iwhite
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
 set path+=**
@@ -807,6 +814,10 @@ nmap <Leader>; <Plug>NERDCommenterToggle
 vmap <F4> <Plug>NERDCommenterToggle
 nmap <F4> <Plug>NERDCommenterToggle
 imap <F4> <Plug>NERDCommenterToggle
+" C-; not recognized in vim
+vmap <C-;> <Plug>NERDCommenterToggle
+nmap <C-;> <Plug>NERDCommenterToggle
+imap <C-;> <Plug>NERDCommenterToggle
 
 autocmd BufEnter * :call SetFiletypeNewBuffer()
 function! SetFiletypeNewBuffer()
